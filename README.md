@@ -78,3 +78,7 @@ Train the word n-gram model (takes a while):
 ```shell
 farcompilestrings --symbols="wiki/${TXTNAME}".ge20.syms --keep_symbols --unknown_symbol="<UNK>" "${TXTNAME}".txt | ngramcount --order=3 | ngrammake | ngramshrink --target_number_of_ngrams=100000000 > "${TXTNAME}".ge20.100Mng.mod.fst
 ```
+
+Note, the resulting trigram model size is around 1.9Mb uncompressed, hence we
+are not storing it here.
+
