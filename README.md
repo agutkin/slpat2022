@@ -66,14 +66,14 @@ shared objects can be found:
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 ```
 
-Reconstruct the original file (this may take a while):
+Reconstruct the original file (this takes about five minutes):
 
 ```shell
 TXTNAME=en_wiki_collection_20200621_pagesplit_shuf.train.20Mline
 cat wiki/*.xz.* | unxz -fcv -T 0 > "${TXTNAME}".txt
 ```
 
-Train the word n-gram model:
+Train the word n-gram model (takes a while):
 
 ```shell
 farcompilestrings --symbols="wiki/${TXTNAME}".ge20.syms --keep_symbols --unknown_symbol="<UNK>" "${TXTNAME}".txt | ngramcount --order=3 | ngrammake | ngramshrink --target_number_of_ngrams=100000000 > "${TXTNAME}".ge20.100Mng.mod.fst
