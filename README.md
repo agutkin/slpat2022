@@ -2,7 +2,8 @@
 
 This directory contains Wikipedia data used for the experiments submitted with the paper
 for the 9th Workshop on Speech and Language Processing for Assistive Technologies
-([SLPAT](http://www.slpat.org/slpat2022/)).
+([SLPAT](http://www.slpat.org/slpat2022/)). The data is used to train large static
+n-gram model.
 
 ## Corpus
 
